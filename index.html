@@ -1,50 +1,357 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>KrizzySite</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial;
-            padding-top: 100px;
-        }
+<title>KrizzySite</title>
 
-        h1 {
-            color: cyan;
-            font-size: 50px;
-        }
+<style>
 
-        p {
-            font-size: 22px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        button {
-            background-color: cyan;
-            border: none;
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+body{
+    background:black;
+    color:white;
+    font-family:Arial;
+    overflow-x:hidden;
+}
 
-        button:hover {
-            background-color: white;
-        }
-    </style>
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#050505;
+    border-bottom:2px solid #111;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:70px;
+}
+
+.logo h1{
+    color:#0d6efd;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#0d6efd;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h2{
+    font-size:60px;
+    animation:glow 2s infinite alternate;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px red;
+    }
+    to{
+        text-shadow:0 0 25px cyan;
+    }
+}
+
+/* BUTTONS */
+
+.btn{
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    background:cyan;
+    color:black;
+}
+
+/* CARDS */
+
+.section{
+    padding:50px 20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#111;
+    width:300px;
+    padding:20px;
+    border-radius:15px;
+    transition:0.3s;
+    box-shadow:0 0 10px #000;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px cyan;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* LOGIN */
+
+.login-box{
+    width:350px;
+    margin:auto;
+    background:#111;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px blue;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#050505;
+    margin-top:50px;
+}
+
+</style>
 </head>
 
 <body>
 
-    <h1>Welcome to KrizzySite</h1>
+<!-- NAVBAR -->
 
-    <p>This is my first website on GitHub Pages!</p>
+<nav>
 
-    <button onclick="alert('Welcome to KrizzySite!')">
-        Click Me
-    </button>
+<div class="K">
+<img src="K.png">
+<h1>KrizzySite</h1>
+</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#games">Games</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#login">Login</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>Welcome to KrizzySite</h2>
+
+<p>Games • Music • Community • Fun</p>
+
+<button class="btn" onclick="welcome()">
+Enter Site
+</button>
+
+</section>
+
+<!-- GAMES -->
+
+<section class="section" id="games">
+
+<h1 style="text-align:center;">Games</h1>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/300/200?1">
+<h2>Racing Game</h2>
+<p>Fast action racing fun.</p>
+<button class="btn">Play</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?2">
+<h2>Space Game</h2>
+<p>Battle through space.</p>
+<button class="btn">Play</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?3">
+<h2>Puzzle Game</h2>
+<p>Train your brain.</p>
+<button class="btn">Play</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<section class="section" id="music">
+
+<h1 style="text-align:center;">Music</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>Now Playing</h2>
+
+<audio controls style="width:100%; margin-top:20px;">
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOGIN -->
+
+<section class="section" id="login">
+
+<h1 style="text-align:center;">Login</h1>
+
+<div class="login-box">
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<button class="btn" style="width:100%;" onclick="login()">
+Login
+</button>
+
+</div>
+
+</section>
+
+<footer>
+    <!-- CHAT SYSTEM -->
+
+<section class="section">
+
+<h1 style="text-align:center;">Krizzy Chat</h1>
+
+<div class="chat-container">
+
+<div class="chat-box" id="chatBox">
+
+<div class="bot-message">
+🤖 KrizzyBot: Hello! Welcome to KrizzySite.
+</div>
+
+</div>
+
+<div class="chat-input-area">
+
+<input type="text" id="userInput" placeholder="Type a message...">
+
+<button onclick="sendMessage()" class="btn">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<h2>KrizzySite © 2026</h2>
+
+</footer>
+
+<script>
+
+/* WELCOME EFFECT */
+
+function welcome(){
+    alert("Welcome to KrizzySite!");
+}
+
+/* LOGIN EFFECT */
+
+function login(){
+    alert("Login system coming soon!");
+}
+
+/* BACKGROUND EFFECT */
+
+document.addEventListener("mousemove", function(e){
+
+    let circle = document.createElement("div");
+
+    circle.style.left = e.pageX + "px";
+    circle.style.top = e.pageY + "px";
+
+    circle.style.position = "absolute";
+    circle.style.width = "10px";
+    circle.style.height = "10px";
+    circle.style.background = "cyan";
+    circle.style.borderRadius = "50%";
+
+    circle.style.pointerEvents = "none";
+
+    document.body.appendChild(circle);
+
+    setTimeout(()=>{
+        circle.remove();
+    },500);
+
+});
+
+</script>
 
 </body>
 </html>
